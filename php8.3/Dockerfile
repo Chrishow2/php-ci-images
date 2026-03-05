@@ -29,4 +29,5 @@ COPY --from=composer:2.9.5 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
 
-CMD ["php", "artisan", "test"]
+# CMD is intentionally omitted to allow CI pipelines to specify their own commands
+# Example: docker run <image> php vendor/bin/phpunit or php artisan test
